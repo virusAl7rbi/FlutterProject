@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
     ),
     Scaffold(
         appBar: AppBar(
-          title: Text("courses"),
+          title: Text("instructors"),
         ),
         body: TabBarView(
           children: <Widget>[],
@@ -120,12 +120,18 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           body: _pages[_selectedPageIndex],
-          bottomNavigationBar: BottomNavigationBar(onTap: _x1, items: [
-            BottomNavigationBarItem(
-                icon: Icon(Icons.account_tree_sharp), label: "courses"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.account_tree_sharp), label: "instructors")
-          ]),
+          bottomNavigationBar: BottomNavigationBar(
+              backgroundColor: Colors.blue,
+              selectedItemColor: Colors.black,
+              unselectedItemColor: Colors.white,
+              currentIndex: _selectedPageIndex,
+              onTap: _x1,
+              items: [
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.account_tree_sharp), label: "courses"),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.account_tree_sharp), label: "instructors")
+              ]),
         ));
     //Column
   }
