@@ -17,6 +17,14 @@ var courses = [
       "In anim nulla magna magna culpa dolor cillum est. Est cillum ad ad aliquip sunt consectetur ea esse. Occaecat Lorem consequat ipsum aliquip excepteur sunt exercitation duis excepteur est commodo labore anim velit. Nisi incididunt aliqua dolor do. Culpa eiusmod dolore pariatur eu veniam irure eu."),
   Course("flutter", "unknown",
       "In anim nulla magna magna culpa dolor cillum est. Est cillum ad ad aliquip sunt consectetur ea esse. Occaecat Lorem consequat ipsum aliquip excepteur sunt exercitation duis excepteur est commodo labore anim velit. Nisi incididunt aliqua dolor do. Culpa eiusmod dolore pariatur eu veniam irure eu."),
+  Course("flutter", "unknown",
+      "In anim nulla magna magna culpa dolor cillum est. Est cillum ad ad aliquip sunt consectetur ea esse. Occaecat Lorem consequat ipsum aliquip excepteur sunt exercitation duis excepteur est commodo labore anim velit. Nisi incididunt aliqua dolor do. Culpa eiusmod dolore pariatur eu veniam irure eu."),
+  Course("flutter", "unknown",
+      "In anim nulla magna magna culpa dolor cillum est. Est cillum ad ad aliquip sunt consectetur ea esse. Occaecat Lorem consequat ipsum aliquip excepteur sunt exercitation duis excepteur est commodo labore anim velit. Nisi incididunt aliqua dolor do. Culpa eiusmod dolore pariatur eu veniam irure eu."),
+  Course("flutter", "unknown",
+      "In anim nulla magna magna culpa dolor cillum est. Est cillum ad ad aliquip sunt consectetur ea esse. Occaecat Lorem consequat ipsum aliquip excepteur sunt exercitation duis excepteur est commodo labore anim velit. Nisi incididunt aliqua dolor do. Culpa eiusmod dolore pariatur eu veniam irure eu."),
+  Course("flutter", "unknown",
+      "In anim nulla magna magna culpa dolor cillum est. Est cillum ad ad aliquip sunt consectetur ea esse. Occaecat Lorem consequat ipsum aliquip excepteur sunt exercitation duis excepteur est commodo labore anim velit. Nisi incididunt aliqua dolor do. Culpa eiusmod dolore pariatur eu veniam irure eu."),
 ];
 
 class MyApp extends StatelessWidget {
@@ -71,19 +79,16 @@ class HomePage extends StatelessWidget {
             ),
           ),
         ),
-        body: ListView(children: [
-          GridView(
-            shrinkWrap: true,
-            children: courses
-                .map((course) =>
-                    CourseDet(course.title, course.trainer, course.description))
-                .toList(),
-            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                maxCrossAxisExtent: 200,
-                childAspectRatio: 1,
-                crossAxisSpacing: 20),
-          )
-        ]));
+        body: GridView(
+          shrinkWrap: true,
+          // ignore: sort_child_properties_last
+          children: courses
+              .map((course) =>
+                  CourseDet(course.title, course.trainer, course.description))
+              .toList(),
+          gridDelegate:
+              SliverGridDelegateWithMaxCrossAxisExtent(maxCrossAxisExtent: 220),
+        ));
     //Column
   }
 }
