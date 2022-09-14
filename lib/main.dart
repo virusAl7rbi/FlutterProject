@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:project/profile.dart';
-import 'package:project/course.dart';
+import 'profile.dart';
+import 'course.dart';
 
 void main() {
   runApp(const MyApp());
