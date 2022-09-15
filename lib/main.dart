@@ -1,14 +1,11 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:project/course.dart';
 import 'package:project/pages.dart';
-
 
 void main() {
   runApp(const MyApp());
 }
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -30,46 +27,57 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   // ignore: prefer_final_fields
-  List<Widget> _pages = [
-    CoursesPage(),
-    InstructorPage(),
-    ProfilePage()
-  ];
+  List<Widget> _pages = [CoursesPage(), InstructorPage(), ProfilePage()];
 
-  int _selectedPageIndex = 0;
+  PageController _pageController = PageController();
+  int selectedpage = 0;
 
   void _x1(int index) {
-    setState(() {
-      _selectedPageIndex = index;
-    });
+    setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-        length: 0,
-        child: Scaffold(
-          body: _pages[_selectedPageIndex],
-          bottomNavigationBar: BottomNavigationBar(
-              backgroundColor: Colors.blue,
-              selectedItemColor: Colors.black,
-              unselectedItemColor: Colors.white,
-              currentIndex: _selectedPageIndex,
-              onTap: _x1,
-              // ignore: prefer_const_literals_to_create_immutables
-              items: [
-                BottomNavigationBarItem(
-                    icon: Icon(Icons.play_circle_fill), label: "courses"),
-                BottomNavigationBarItem(
-                    icon: Icon(Icons.supervised_user_circle_rounded),
-                    label: "instructors"),
-                BottomNavigationBarItem(
-                    icon: Icon(
-                      Icons.account_circle_rounded,
-                    ),
-                    label: "Profile")
-              ]),
-        ));
-    //Column
+    return Scaffold(
+      body: Column(children: [buildPageView(), buildBottNavigation()]),
+    );
+  }
+
+  Widget buildPageView() {
+    return SizedBox(
+      height: MediaQuery.of(context).size.height * 0.918,
+      child: PageView(
+        controller: _pageController,
+        children: [CoursesPage(), InstructorPage(), ProfilePage()],
+        onPageChanged: (index) {
+          setState(() {
+            selectedpage = index;
+          });
+        },
+      ),
+    );
+  }
+
+  Widget buildBottNavigation() {
+    return BottomNavigationBar(
+        currentIndex: selectedpage,
+        onTap: (int index) {
+          _pageController.animateToPage(index,
+              duration: Duration(microseconds: 1000), curve: Curves.easeIn);
+        },
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.play_circle_fill), label: "courses"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.supervised_user_circle_rounded),
+              label: "instructors"),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.account_circle_rounded,
+              ),
+              label: "Profile")
+        ]);
   }
 }
+
+onPageChange(int index) {}
