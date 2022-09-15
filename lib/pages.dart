@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 
 import 'package:project/course.dart';
@@ -19,6 +21,20 @@ var courses = [
       "In anim nulla magna magna culpa dolor cillum est. Est cillum ad ad aliquip sunt consectetur ea esse. Occaecat Lorem consequat ipsum aliquip excepteur sunt exercitation duis excepteur est commodo labore anim velit. Nisi incididunt aliqua dolor do. Culpa eiusmod dolore pariatur eu veniam irure eu."),
   Course("flutter", "unknown",
       "In anim nulla magna magna culpa dolor cillum est. Est cillum ad ad aliquip sunt consectetur ea esse. Occaecat Lorem consequat ipsum aliquip excepteur sunt exercitation duis excepteur est commodo labore anim velit. Nisi incididunt aliqua dolor do. Culpa eiusmod dolore pariatur eu veniam irure eu."),
+];
+var instructors = [
+  Instructor("Fahd", "mobile phone applications", 5),
+  Instructor("Fahd", "mobile phone applications", 5),
+  Instructor("Fahd", "mobile phone applications", 5),
+  Instructor("Fahd", "mobile phone applications", 5),
+  Instructor("Fahd", "mobile phone applications", 5),
+  Instructor("Fahd", "mobile phone applications", 5),
+  Instructor("Fahd", "mobile phone applications", 5),
+  Instructor("Fahd", "mobile phone applications", 5),
+  Instructor("Fahd", "mobile phone applications", 5),
+  Instructor("Fahd", "mobile phone applications", 5),
+  Instructor("Fahd", "mobile phone applications", 5),
+  Instructor("Fahd", "mobile phone applications", 5),
 ];
 
 class CoursesPage extends StatelessWidget {
@@ -54,16 +70,26 @@ class InstructorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("instructors"),
-        ),
-        body: TabBarView(
-          children: <Widget>[],
-        ));
+      appBar: AppBar(
+        title: Text("instructors"),
+      ),
+      body: GridView(
+        shrinkWrap: true,
+        // ignore: sort_child_properties_last
+        children: instructors
+            .map((inst) => InstructorDet(
+                  name: inst.name,
+                  field: inst.field,
+                  courses: inst.courses,
+                ))
+            .toList(),
+
+        gridDelegate:
+            SliverGridDelegateWithMaxCrossAxisExtent(maxCrossAxisExtent: 220),
+      ),
+    );
   }
 }
-
-
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});

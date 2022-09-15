@@ -14,7 +14,11 @@ class CourseDet extends StatelessWidget {
   final String title;
   final String trainer;
   final String description;
-  const CourseDet({super.key, required this.title, required this.description, required this.trainer});
+  const CourseDet(
+      {super.key,
+      required this.title,
+      required this.description,
+      required this.trainer});
 
   @override
   Widget build(BuildContext context) {
@@ -68,73 +72,72 @@ class CourseDet extends StatelessWidget {
   }
 }
 
+class Instructor {
+  final String name;
+  final int courses;
+  final String field;
 
-// class Instructor {
-//   final String name;
-//   final String courses;
-//   final String trainer;
+  Instructor(this.name, this.field, this.courses);
+}
 
-//   Course(this.title, this.trainer, this.description);
-// }
+class InstructorDet extends StatelessWidget {
+  final String name;
+  final int courses;
+  final String field;
 
-// class InstructorDet extends StatelessWidget {
-//   final String name;
-//   final String trainer;
-//   final String description;
-//   const CourseDet(
-//       {super.key,
-//       required this.title,
-//       required this.description,
-//       required this.trainer});
+  const InstructorDet(
+      {super.key,
+      required this.name,
+      required this.courses,
+      required this.field});
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       // width: 200,
-//       margin: EdgeInsets.only(top: 40, left: 15, right: 15),
-//       child: Container(
-//         decoration: BoxDecoration(
-//             color: Colors.white,
-//             boxShadow: [
-//               BoxShadow(
-//                 color: Colors.grey.withOpacity(0.5), //color of shadow
-//                 spreadRadius: 5, //spread radius
-//                 blurRadius: 7, // blur radius
-//                 offset: const Offset(0, 2), // changes position of shadow
-//               ),
-//               //you can set more BoxShadow() here
-//             ],
-//             borderRadius: BorderRadius.circular(10)),
-//         child: Padding(
-//           padding: const EdgeInsets.only(top: 10, left: 10),
-//           child:
-//               // ignore: duplicate_ignore
-//               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-//             Text(
-//               title,
-//               style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
-//             ),
-//             // ignore: prefer_const_constructors
-//             SizedBox(
-//               height: 10,
-//             ),
-//             Text(
-//               "Trainer: $trainer",
-//               style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-//             ),
-//             // ignore: prefer_const_constructors
-//             SizedBox(
-//               height: 10,
-//             ),
-//             Expanded(
-//               child: SingleChildScrollView(
-//                 scrollDirection: Axis.vertical,
-//                 child: Text(description),
-//               ),
-//             )
-//           ]),
-//         ),
-//       ),
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      // width: 200,
+      margin: EdgeInsets.only(top: 40, left: 15, right: 15),
+      child: Container(
+        decoration: BoxDecoration(
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.5), //color of shadow
+                spreadRadius: 5, //spread radius
+                blurRadius: 7, // blur radius
+                offset: const Offset(0, 2), // changes position of shadow
+              ),
+              //you can set more BoxShadow() here
+            ],
+            borderRadius: BorderRadius.circular(10)),
+        child: Padding(
+          padding: const EdgeInsets.only(top: 10, left: 10),
+          child:
+              // ignore: duplicate_ignore
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Text(
+              name,
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
+            ),
+            // ignore: prefer_const_constructors
+            SizedBox(
+              height: 25,
+            ),
+            Text(
+              "Courses: $courses",
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+            ),
+            // ignore: prefer_const_constructors
+            SizedBox(
+              height: 15,
+            ),
+            Text(
+              "field:",
+              style: TextStyle(fontSize: 15),
+            ),
+            Text(field)
+          ]),
+        ),
+      ),
+    );
+  }
+}
