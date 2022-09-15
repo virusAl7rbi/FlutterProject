@@ -157,56 +157,60 @@ class ProfilePage extends StatelessWidget {
         SafeArea(
           child: Padding(
             padding: const EdgeInsets.only(top: 40, left: 15, right: 15),
-            child: Container(
-              width: MediaQuery.of(context).size.height,
-              height: 150,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5), //color of shadow
-                      spreadRadius: 5, //spread radius
-                      blurRadius: 7, // blur radius
-                      offset: const Offset(0, 2), // changes position of shadow
-                      //first paramerter of offset is left-right
-                      //second parameter is top to down
-                    ),
-                    //you can set more BoxShadow() here
-                  ],
-                  borderRadius: BorderRadius.circular(10)),
-              child: Padding(
-                padding: const EdgeInsets.only(top: 10, left: 10),
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        // ignore: prefer_const_literals_to_create_immutables
-                        children: [
-                          const Text("Name: \n",
-                              style: TextStyle(fontSize: 20)),
-                          const Text("Fahd Alharbi\n",
-                              style: TextStyle(fontSize: 20)),
-                        ],
+            child: Expanded(
+              child: Container(
+                width: MediaQuery.of(context).size.height,
+                height: 170,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5), //color of shadow
+                        spreadRadius: 5, //spread radius
+                        blurRadius: 7, // blur radius
+                        offset:
+                            const Offset(0, 2), // changes position of shadow
+                        //first paramerter of offset is left-right
+                        //second parameter is top to down
                       ),
-                      Row(
-                        // ignore: prefer_const_literals_to_create_immutables
-                        children: [
-                          const Text("finished courses: \n",
-                              style: TextStyle(fontSize: 20)),
-                          const Text("Flutter\n",
-                              style: TextStyle(fontSize: 20)),
-                        ],
-                      ),
-                      Row(
-                        // ignore: prefer_const_literals_to_create_immutables
-                        children: [
-                          const Text("language: \n ",
-                              style: TextStyle(fontSize: 20)),
-                          const Text("English \n",
-                              style: TextStyle(fontSize: 20)),
-                        ],
-                      ),
-                    ]),
+                      //you can set more BoxShadow() here
+                    ],
+                    borderRadius: BorderRadius.circular(10)),
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 10, left: 10),
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Row(
+                          // ignore: prefer_const_literals_to_create_immutables
+                          children: [
+                            const Text("Name: \n",
+                                style: TextStyle(fontSize: 20)),
+                            const Text("Fahd Alharbi\n",
+                                style: TextStyle(fontSize: 20)),
+                          ],
+                        ),
+                        Row(
+                          // ignore: prefer_const_literals_to_create_immutables
+                          children: [
+                            const Text("finished courses: \n",
+                                style: TextStyle(fontSize: 20)),
+                            const Text("Flutter\n",
+                                style: TextStyle(fontSize: 20)),
+                          ],
+                        ),
+                        Row(
+                          // ignore: prefer_const_literals_to_create_immutables
+                          children: [
+                            const Text("language: \n ",
+                                style: TextStyle(fontSize: 20)),
+                            const Text("English \n",
+                                style: TextStyle(fontSize: 20)),
+                          ],
+                        ),
+                      ]),
+                ),
               ),
             ),
           ),

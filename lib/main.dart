@@ -50,10 +50,17 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(children: [
-        buildPageView(),
         Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [buildBottNavigation()],
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            buildPageView(),
+          ],
+        ),
+        Expanded(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [buildBottNavigation()],
+          ),
         )
       ]),
     );
@@ -86,7 +93,7 @@ class _HomePageState extends State<HomePage> {
       ],
       inactiveIcons: [Text("Courses"), Text("instructors"), Text("Profile")],
       color: Color.fromARGB(255, 252, 252, 252),
-      height: 60,
+      height: MediaQuery.of(context).size.height * 0.08863,
       circleWidth: 60,
       initIndex: 0,
       onChanged: (int index) {

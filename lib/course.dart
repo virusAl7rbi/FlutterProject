@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class Course {
@@ -27,6 +29,7 @@ class CourseDet extends StatelessWidget {
       // width: 200,
       margin: EdgeInsets.only(top: 40, left: 15, right: 15),
       child: Container(
+        alignment: Alignment.center,
         decoration: BoxDecoration(
             color: Colors.white,
             boxShadow: [
@@ -40,11 +43,12 @@ class CourseDet extends StatelessWidget {
             ],
             borderRadius: BorderRadius.circular(10)),
         child: Padding(
-          padding: const EdgeInsets.only(top: 10, left: 10),
+          padding: const EdgeInsets.only(top: 10, left: 10, bottom: 10),
           child:
               // ignore: duplicate_ignore
               Row(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Expanded(
                 child: SizedBox(
@@ -58,21 +62,31 @@ class CourseDet extends StatelessWidget {
               Expanded(
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         title,
                         style: const TextStyle(
                             fontSize: 20, fontWeight: FontWeight.w800),
                       ),
-                      // ignore: prefer_const_constructors
-
+                      Divider(
+                        thickness: 3,
+                      ),
                       Text(
                         "Trainer: $trainer",
                         style: const TextStyle(
                             fontSize: 15, fontWeight: FontWeight.w600),
                       ),
-                      // ignore: prefer_const_constructors
-
+                      Divider(
+                        thickness: 3,
+                      ),
+                      Text(
+                        "Description",
+                        style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                            color: Color.fromARGB(255, 180, 180, 180)),
+                      ),
                       Expanded(
                         child: SingleChildScrollView(
                           scrollDirection: Axis.vertical,
@@ -84,6 +98,9 @@ class CourseDet extends StatelessWidget {
                       )
                     ]),
               ),
+              SizedBox(
+                height: 10,
+              )
             ],
           ),
         ),
