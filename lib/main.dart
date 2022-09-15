@@ -1,10 +1,18 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:project/pages.dart';
+import 'package:circle_nav_bar/circle_nav_bar.dart';
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.landscapeLeft,
+    DeviceOrientation.landscapeRight,
+    DeviceOrientation.portraitDown,
+    DeviceOrientation.portraitUp
+  ]).then((_) => runApp(const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -33,7 +41,9 @@ class _HomePageState extends State<HomePage> {
   int selectedpage = 0;
 
   void _x1(int index) {
-    setState(() {});
+    setState(() {
+      selectedpage = index;
+    });
   }
 
   @override
@@ -45,39 +55,44 @@ class _HomePageState extends State<HomePage> {
 
   Widget buildPageView() {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.918,
+      height: MediaQuery.of(context).size.height * 0.909,
       child: PageView(
         controller: _pageController,
         children: [CoursesPage(), InstructorPage(), ProfilePage()],
-        onPageChanged: (index) {
-          setState(() {
-            selectedpage = index;
-          });
-        },
+        onPageChanged: _x1,
       ),
     );
   }
 
   Widget buildBottNavigation() {
-    return BottomNavigationBar(
-        currentIndex: selectedpage,
-        onTap: (int index) {
-          _pageController.animateToPage(index,
-              duration: Duration(microseconds: 1000), curve: Curves.easeIn);
-        },
-        items: [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.play_circle_fill), label: "courses"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.supervised_user_circle_rounded),
-              label: "instructors"),
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.account_circle_rounded,
-              ),
-              label: "Profile")
-        ]);
+    return CircleNavBar(
+      activeIcons: [
+        Icon(
+          Icons.play_circle_fill,
+          color: Color.fromARGB(255, 248, 168, 94),
+        ),
+        Icon(Icons.supervised_user_circle_rounded,
+            color: Color.fromARGB(255, 248, 168, 94)),
+        Icon(Icons.account_circle_rounded,
+            color: Color.fromARGB(255, 248, 168, 94))
+      ],
+      inactiveIcons: [Text("Courses"), Text("instructors"), Text("Profile")],
+      color: Color.fromARGB(255, 252, 252, 252),
+      height: 60,
+      circleWidth: MediaQuery.of(context).size.height * 0.009,
+      initIndex: 0,
+      onChanged: (int index) {
+        _pageController.animateToPage(index,
+            duration: Duration(microseconds: 1000), curve: Curves.easeIn);
+      },
+      padding: EdgeInsets.only(bottom: 2),
+      cornerRadius: BorderRadius.only(
+          topLeft: Radius.circular(8),
+          topRight: Radius.circular(8),
+          bottomLeft: Radius.circular(24),
+          bottomRight: Radius.circular(24)),
+      shadowColor: Color.fromARGB(255, 155, 155, 154),
+      elevation: 10,
+    );
   }
 }
-
-onPageChange(int index) {}

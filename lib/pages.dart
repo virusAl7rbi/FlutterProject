@@ -5,34 +5,48 @@ import 'package:flutter/material.dart';
 import 'package:project/course.dart';
 
 var courses = [
-  Course("flutter", "unknown",
-      "In anim nulla magna magna culpa dolor cillum est. Est cillum ad ad aliquip sunt consectetur ea esse. Occaecat Lorem consequat ipsum aliquip excepteur sunt exercitation duis excepteur est commodo labore anim velit. Nisi incididunt aliqua dolor do. Culpa eiusmod dolore pariatur eu veniam irure eu."),
-  Course("flutter", "unknown",
-      "In anim nulla magna magna culpa dolor cillum est. Est cillum ad ad aliquip sunt consectetur ea esse. Occaecat Lorem consequat ipsum aliquip excepteur sunt exercitation duis excepteur est commodo labore anim velit. Nisi incididunt aliqua dolor do. Culpa eiusmod dolore pariatur eu veniam irure eu."),
-  Course("flutter", "unknown",
-      "In anim nulla magna magna culpa dolor cillum est. Est cillum ad ad aliquip sunt consectetur ea esse. Occaecat Lorem consequat ipsum aliquip excepteur sunt exercitation duis excepteur est commodo labore anim velit. Nisi incididunt aliqua dolor do. Culpa eiusmod dolore pariatur eu veniam irure eu."),
-  Course("flutter", "unknown",
-      "In anim nulla magna magna culpa dolor cillum est. Est cillum ad ad aliquip sunt consectetur ea esse. Occaecat Lorem consequat ipsum aliquip excepteur sunt exercitation duis excepteur est commodo labore anim velit. Nisi incididunt aliqua dolor do. Culpa eiusmod dolore pariatur eu veniam irure eu."),
-  Course("flutter", "unknown",
-      "In anim nulla magna magna culpa dolor cillum est. Est cillum ad ad aliquip sunt consectetur ea esse. Occaecat Lorem consequat ipsum aliquip excepteur sunt exercitation duis excepteur est commodo labore anim velit. Nisi incididunt aliqua dolor do. Culpa eiusmod dolore pariatur eu veniam irure eu."),
-  Course("flutter", "unknown",
-      "In anim nulla magna magna culpa dolor cillum est. Est cillum ad ad aliquip sunt consectetur ea esse. Occaecat Lorem consequat ipsum aliquip excepteur sunt exercitation duis excepteur est commodo labore anim velit. Nisi incididunt aliqua dolor do. Culpa eiusmod dolore pariatur eu veniam irure eu."),
-  Course("flutter", "unknown",
-      "In anim nulla magna magna culpa dolor cillum est. Est cillum ad ad aliquip sunt consectetur ea esse. Occaecat Lorem consequat ipsum aliquip excepteur sunt exercitation duis excepteur est commodo labore anim velit. Nisi incididunt aliqua dolor do. Culpa eiusmod dolore pariatur eu veniam irure eu."),
-  Course("flutter", "unknown",
-      "In anim nulla magna magna culpa dolor cillum est. Est cillum ad ad aliquip sunt consectetur ea esse. Occaecat Lorem consequat ipsum aliquip excepteur sunt exercitation duis excepteur est commodo labore anim velit. Nisi incididunt aliqua dolor do. Culpa eiusmod dolore pariatur eu veniam irure eu."),
+  Course(
+      "python",
+      "unknown",
+      "In anim nulla magna magna culpa dolor cillum est. Est cillum ad ad aliquip sunt consectetur ea esse. Occaecat Lorem consequat ipsum aliquip excepteur sunt exercitation duis excepteur est commodo labore anim velit. Nisi incididunt aliqua dolor do. Culpa eiusmod dolore pariatur eu veniam irure eu.",
+      "assets/img/python.png"),
+  Course(
+      "dart",
+      "unknown",
+      "In anim nulla magna magna culpa dolor cillum est. Est cillum ad ad aliquip sunt consectetur ea esse. Occaecat Lorem consequat ipsum aliquip excepteur sunt exercitation duis excepteur est commodo labore anim velit. Nisi incididunt aliqua dolor do. Culpa eiusmod dolore pariatur eu veniam irure eu.",
+      "assets/img/dart.png"),
+  Course(
+      "flutter",
+      "unknown",
+      "In anim nulla magna magna culpa dolor cillum est. Est cillum ad ad aliquip sunt consectetur ea esse. Occaecat Lorem consequat ipsum aliquip excepteur sunt exercitation duis excepteur est commodo labore anim velit. Nisi incididunt aliqua dolor do. Culpa eiusmod dolore pariatur eu veniam irure eu.",
+      "assets/img/logo.png"),
+  Course(
+      "python",
+      "unknown",
+      "In anim nulla magna magna culpa dolor cillum est. Est cillum ad ad aliquip sunt consectetur ea esse. Occaecat Lorem consequat ipsum aliquip excepteur sunt exercitation duis excepteur est commodo labore anim velit. Nisi incididunt aliqua dolor do. Culpa eiusmod dolore pariatur eu veniam irure eu.",
+      "assets/img/python.png"),
+  Course(
+      "dart",
+      "unknown",
+      "In anim nulla magna magna culpa dolor cillum est. Est cillum ad ad aliquip sunt consectetur ea esse. Occaecat Lorem consequat ipsum aliquip excepteur sunt exercitation duis excepteur est commodo labore anim velit. Nisi incididunt aliqua dolor do. Culpa eiusmod dolore pariatur eu veniam irure eu.",
+      "assets/img/dart.png"),
+  Course(
+      "flutter",
+      "unknown",
+      "In anim nulla magna magna culpa dolor cillum est. Est cillum ad ad aliquip sunt consectetur ea esse. Occaecat Lorem consequat ipsum aliquip excepteur sunt exercitation duis excepteur est commodo labore anim velit. Nisi incididunt aliqua dolor do. Culpa eiusmod dolore pariatur eu veniam irure eu.",
+      "assets/img/logo.png"),
 ];
 var instructors = [
-  Instructor("Fahd", "mobile phone applications", 5,
-      "https://img.pngio.com/red-wallpaper-png-5-png-image-red-wallpaper-png-1920_1080.png"),
-  Instructor("Fahd", "mobile phone applications", 5,
-      "https://img.pngio.com/red-wallpaper-png-5-png-image-red-wallpaper-png-1920_1080.png"),
-  Instructor("Fahd", "mobile phone applications", 5,
-      "https://img.pngio.com/red-wallpaper-png-5-png-image-red-wallpaper-png-1920_1080.png"),
-  Instructor("Fahd", "mobile phone applications", 5,
-      "https://img.pngio.com/red-wallpaper-png-5-png-image-red-wallpaper-png-1920_1080.png"),
-  Instructor("Fahd", "mobile phone applications", 5,
-      "https://img.pngio.com/red-wallpaper-png-5-png-image-red-wallpaper-png-1920_1080.png"),
+  Instructor(
+      "Dalia", "mobile phone applications", 5, "assets/img/personal.jpeg"),
+  Instructor(
+      "Rawan", "mobile phone applications", 5, "assets/img/personal.jpeg"),
+  Instructor("Ali", "mobile phone applications", 5, "assets/img/personal.jpeg"),
+  Instructor(
+      "Dalia", "mobile phone applications", 5, "assets/img/personal.jpeg"),
+  Instructor(
+      "Rawan", "mobile phone applications", 5, "assets/img/personal.jpeg"),
+  Instructor("Ali", "mobile phone applications", 5, "assets/img/personal.jpeg"),
 ];
 
 class CoursesPage extends StatelessWidget {
@@ -41,8 +55,17 @@ class CoursesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(25, 224, 224, 224),
       appBar: AppBar(
-        title: Text("courses"),
+        title: Text(
+          "   courses",
+          style: TextStyle(
+            fontSize: 25,
+          ),
+        ),
+        backgroundColor: Color.fromARGB(255, 255, 179, 64),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(bottom: Radius.circular(70))),
       ),
       body: GridView(
         shrinkWrap: true,
@@ -52,11 +75,13 @@ class CoursesPage extends StatelessWidget {
                   title: course.title,
                   trainer: course.trainer,
                   description: course.description,
+                  vid: course.vid,
                 ))
             .toList(),
 
-        gridDelegate:
-            SliverGridDelegateWithMaxCrossAxisExtent(maxCrossAxisExtent: 220),
+        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+            maxCrossAxisExtent: MediaQuery.of(context).size.width,
+            childAspectRatio: 6 / 5),
       ),
     );
   }
@@ -68,8 +93,17 @@ class InstructorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(25, 224, 224, 224),
       appBar: AppBar(
-        title: Text("instructors"),
+        title: Text(
+          "   instructors",
+          style: TextStyle(
+            fontSize: 25,
+          ),
+        ),
+        backgroundColor: Color.fromARGB(255, 255, 179, 64),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(bottom: Radius.circular(70))),
       ),
       body: GridView(
         shrinkWrap: true,
@@ -84,8 +118,8 @@ class InstructorPage extends StatelessWidget {
             .toList(),
 
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: MediaQuery.of(context).size.width,
-        ),
+            maxCrossAxisExtent: MediaQuery.of(context).size.width,
+            childAspectRatio: 2 / 1),
       ),
     );
   }
@@ -97,20 +131,26 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(25, 224, 224, 224),
       appBar: AppBar(
-        title: const Text(
-          "Profile",
-          style: TextStyle(fontSize: 25),
+        title: Text(
+          "   profile",
+          style: TextStyle(
+            fontSize: 25,
+          ),
         ),
+        backgroundColor: Color.fromARGB(255, 255, 179, 64),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(bottom: Radius.circular(70))),
       ),
       body: ListView(children: [
         Padding(
           padding: const EdgeInsets.only(top: 20),
           child: SizedBox(
-            height: 100,
-            width: 50,
+            height: 150,
+            width: 150,
             child: Image.asset(
-              'assets/img/logo.png',
+              'assets/img/personal.jpeg',
             ),
           ),
         ),
