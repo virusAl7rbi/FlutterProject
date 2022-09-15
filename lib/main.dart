@@ -49,17 +49,25 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(children: [buildPageView(), buildBottNavigation()]),
+      body: Column(children: [
+        buildPageView(),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [buildBottNavigation()],
+        )
+      ]),
     );
   }
 
   Widget buildPageView() {
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.909,
-      child: PageView(
-        controller: _pageController,
-        children: [CoursesPage(), InstructorPage(), ProfilePage()],
-        onPageChanged: _x1,
+      child: SafeArea(
+        child: PageView(
+          controller: _pageController,
+          onPageChanged: _x1,
+          children: [CoursesPage(), InstructorPage(), ProfilePage()],
+        ),
       ),
     );
   }

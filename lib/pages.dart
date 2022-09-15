@@ -81,7 +81,7 @@ class CoursesPage extends StatelessWidget {
 
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: MediaQuery.of(context).size.width,
-            childAspectRatio: 6 / 5),
+            childAspectRatio: 2 / 1),
       ),
     );
   }
