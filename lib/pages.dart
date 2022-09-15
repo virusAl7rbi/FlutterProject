@@ -23,18 +23,16 @@ var courses = [
       "In anim nulla magna magna culpa dolor cillum est. Est cillum ad ad aliquip sunt consectetur ea esse. Occaecat Lorem consequat ipsum aliquip excepteur sunt exercitation duis excepteur est commodo labore anim velit. Nisi incididunt aliqua dolor do. Culpa eiusmod dolore pariatur eu veniam irure eu."),
 ];
 var instructors = [
-  Instructor("Fahd", "mobile phone applications", 5),
-  Instructor("Fahd", "mobile phone applications", 5),
-  Instructor("Fahd", "mobile phone applications", 5),
-  Instructor("Fahd", "mobile phone applications", 5),
-  Instructor("Fahd", "mobile phone applications", 5),
-  Instructor("Fahd", "mobile phone applications", 5),
-  Instructor("Fahd", "mobile phone applications", 5),
-  Instructor("Fahd", "mobile phone applications", 5),
-  Instructor("Fahd", "mobile phone applications", 5),
-  Instructor("Fahd", "mobile phone applications", 5),
-  Instructor("Fahd", "mobile phone applications", 5),
-  Instructor("Fahd", "mobile phone applications", 5),
+  Instructor("Fahd", "mobile phone applications", 5,
+      "https://img.pngio.com/red-wallpaper-png-5-png-image-red-wallpaper-png-1920_1080.png"),
+  Instructor("Fahd", "mobile phone applications", 5,
+      "https://img.pngio.com/red-wallpaper-png-5-png-image-red-wallpaper-png-1920_1080.png"),
+  Instructor("Fahd", "mobile phone applications", 5,
+      "https://img.pngio.com/red-wallpaper-png-5-png-image-red-wallpaper-png-1920_1080.png"),
+  Instructor("Fahd", "mobile phone applications", 5,
+      "https://img.pngio.com/red-wallpaper-png-5-png-image-red-wallpaper-png-1920_1080.png"),
+  Instructor("Fahd", "mobile phone applications", 5,
+      "https://img.pngio.com/red-wallpaper-png-5-png-image-red-wallpaper-png-1920_1080.png"),
 ];
 
 class CoursesPage extends StatelessWidget {
@@ -81,11 +79,13 @@ class InstructorPage extends StatelessWidget {
                   name: inst.name,
                   field: inst.field,
                   courses: inst.courses,
+                  picURL: inst.picURL,
                 ))
             .toList(),
 
-        gridDelegate:
-            SliverGridDelegateWithMaxCrossAxisExtent(maxCrossAxisExtent: 220),
+        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: MediaQuery.of(context).size.width,
+        ),
       ),
     );
   }

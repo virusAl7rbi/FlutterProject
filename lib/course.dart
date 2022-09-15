@@ -76,25 +76,28 @@ class Instructor {
   final String name;
   final int courses;
   final String field;
+  final String picURL;
 
-  Instructor(this.name, this.field, this.courses);
+  Instructor(this.name, this.field, this.courses, this.picURL);
 }
 
 class InstructorDet extends StatelessWidget {
   final String name;
   final int courses;
   final String field;
+  final String picURL;
 
   const InstructorDet(
       {super.key,
       required this.name,
       required this.courses,
-      required this.field});
+      required this.field,
+      required this.picURL});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      // width: 200,
+      height: 300,
       margin: EdgeInsets.only(top: 40, left: 15, right: 15),
       child: Container(
         decoration: BoxDecoration(
@@ -110,32 +113,49 @@ class InstructorDet extends StatelessWidget {
             ],
             borderRadius: BorderRadius.circular(10)),
         child: Padding(
-          padding: const EdgeInsets.only(top: 10, left: 10),
-          child:
-              // ignore: duplicate_ignore
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                width: 150,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: CircleAvatar(
+                    backgroundImage: NetworkImage(picURL),
+                    radius: 70,
+                  ),
+                ),
+              ),
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Text(
-              name,
-              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
-            ),
-            // ignore: prefer_const_constructors
-            SizedBox(
-              height: 25,
-            ),
-            Text(
-              "Courses: $courses",
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-            ),
-            // ignore: prefer_const_constructors
-            SizedBox(
-              height: 15,
-            ),
-            Text(
-              "field:",
-              style: TextStyle(fontSize: 15),
-            ),
-            Text(field)
-          ]),
+                Text(
+                  name,
+                  style: const TextStyle(
+                      fontSize: 20, fontWeight: FontWeight.w800),
+                ),
+                // ignore: prefer_const_constructors
+                SizedBox(
+                  height: 25,
+                ),
+                Text(
+                  "Courses: $courses",
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+                ),
+                // ignore: prefer_const_constructors
+                SizedBox(
+                  height: 15,
+                ),
+                Text(
+                  "field:",
+                  style: TextStyle(fontSize: 17),
+                ),
+                Text(
+                  field,
+                  style: TextStyle(fontSize: 17),
+                )
+              ]),
+            ],
+          ),
         ),
       ),
     );
