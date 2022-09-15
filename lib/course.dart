@@ -73,11 +73,13 @@ class CourseDet extends StatelessWidget {
                       ),
                       // ignore: prefer_const_constructors
 
-                      SingleChildScrollView(
-                        scrollDirection: Axis.vertical,
-                        child: Text(
-                          description,
-                          softWrap: true,
+                      Expanded(
+                        child: SingleChildScrollView(
+                          scrollDirection: Axis.vertical,
+                          child: Text(
+                            description,
+                            softWrap: true,
+                          ),
                         ),
                       )
                     ]),

@@ -6,13 +6,13 @@ import 'package:project/pages.dart';
 import 'package:circle_nav_bar/circle_nav_bar.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.landscapeLeft,
-    DeviceOrientation.landscapeRight,
-    DeviceOrientation.portraitDown,
-    DeviceOrientation.portraitUp
-  ]).then((_) => runApp(const MyApp()));
+  runApp(const MyApp());
+  // SystemChrome.setPreferredOrientations([
+  //   DeviceOrientation.landscapeLeft,
+  //   DeviceOrientation.landscapeRight,
+  //   DeviceOrientation.portraitDown,
+  //   DeviceOrientation.portraitUp
+  // ]);
 }
 
 class MyApp extends StatelessWidget {
@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
       inactiveIcons: [Text("Courses"), Text("instructors"), Text("Profile")],
       color: Color.fromARGB(255, 252, 252, 252),
       height: 60,
-      circleWidth: MediaQuery.of(context).size.height * 0.009,
+      circleWidth: 60,
       initIndex: 0,
       onChanged: (int index) {
         _pageController.animateToPage(index,
