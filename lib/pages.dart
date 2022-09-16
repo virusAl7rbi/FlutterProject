@@ -68,6 +68,7 @@ class CoursesPage extends StatelessWidget {
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(70))),
       ),
       body: GridView(
+        padding: EdgeInsets.only(bottom: 30),
         shrinkWrap: true,
         // ignore: sort_child_properties_last
         children: courses

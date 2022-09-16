@@ -27,7 +27,11 @@ class CourseDet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       // width: 200,
-      margin: EdgeInsets.only(top: 40, left: 15, right: 15),
+      margin: EdgeInsets.only(
+        top: 40,
+        left: 15,
+        right: 15,
+      ),
       child: Container(
         alignment: Alignment.center,
         decoration: BoxDecoration(
